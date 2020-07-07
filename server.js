@@ -2,7 +2,7 @@
 //Dependencies
 //___________________
 const express = require('express');
-const router = express.Router();
+// const router = express.Router();
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
@@ -49,9 +49,12 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+const characterController = require('./controllers/characters.js');
+app.use('/characters', characterController);
+
+// app.get('/' , (req, res) => {
+//   res.send('Hello World!');
+// });
 
 //___________________
 //Listener
