@@ -2,6 +2,7 @@
 //Dependencies
 //___________________
 const express = require('express');
+const router = express.Router();
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();

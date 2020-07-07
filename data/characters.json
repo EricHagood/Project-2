@@ -1,0 +1,13 @@
+{
+    "name": "Alexander",
+    "background": "Outlander",
+    "characterClass": [{
+        "characterClass1": "Fighter", 
+        "level": 4
+    },{
+        "characterClass2": "Paladin", 
+        "level": 2
+    }],
+    "backStory": "He has one.",
+    "items": ["Glaive", "Plate Armor", "Holy Symbol"]
+}
