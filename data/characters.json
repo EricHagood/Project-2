@@ -2,10 +2,10 @@
     "name": "Alexander",
     "background": "Outlander",
     "characterClass": [{
-        "characterClass1": "Fighter", 
+        "characterClass": "Fighter", 
         "level": 4
     },{
-        "characterClass2": "Paladin", 
+        "characterClass": "Paladin", 
         "level": 2
     }],
     "backStory": "He has one.",

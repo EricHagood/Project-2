@@ -5,7 +5,8 @@ const characterSchema = new mongoose.Schema({
     background: {type: String, required: true},
     characterClass: {type: Array, required: true},
     backStory: {type: String},
-    items: {type: Array}
+    items: {type: Array},
+    isDead: {type: Boolean}
 })
 
 const Character = mongoose.model("Character", characterSchema)

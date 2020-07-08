@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h1>Character List</h1>
+        <form action="/characters/new" method="GET">
+            <input type="submit" value="Create New Character"/>
+        </form>
+    </nav>
+    <div class="characterDiv">
+        <%for (let i =0; i < characters.length; i++){ %> 
+            <h4><%= characters[i].name%></h4>
+            <%for (let k = 0; k < characters[i].characterClass.length; k++){%>
+                <p><%=characters[i].characterClass[k].characterClass%>: <%=characters[i].characterClass[k].level%></p>
+            <%}%>
+        <a href='/characters/<%=characters[i].id%>/edit'>Edit Character</a>
+        <form action="/characters/<%= characters[i].id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Character"/>
+        </form>
+        <%}%>
+    </div>
+</body>
+</html>
