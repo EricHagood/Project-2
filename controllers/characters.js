@@ -38,6 +38,11 @@ router.get('/:id/edit', (req, res)=>{
         })
     })
 })
+
+router.get('/new', (req, res)=>{
+    res.render('new.ejs')
+})
+
 router.put('/:id', (req, res)=>{
     if (req.body.isDead == 'on'){
         req.body.idDead = true;
@@ -58,7 +63,7 @@ router.get('/:id', (req, res)=>{
     })
 })
 
-//
+//Test data
 router.get('/seed', (req, res)=>{
     Character.create([{
         name: "Alexander",
@@ -74,6 +79,12 @@ router.get('/seed', (req, res)=>{
         items: ["Glaive", "Plate Armor", "Holy Symbol"],
         isDead: false
     }])
+})
+
+router.delete('/:id', (req, res)=>{
+    Character.findByIdAndRemove(req.params.id, {useFindAndModify: false}, (err, data)=>{
+        res.redirect('/characters')
+    })
 })
 
 module.exports = router;
