@@ -49,6 +49,14 @@ router.put('/:id', (req, res)=>{
     })
 })
 
+//show route
+router.get('/:id', (req, res)=>{
+    Character.findById(req.params.id, (err, foundCharacter)=>{
+        res.render('show.ejs', {
+            character: foundCharacter
+        })
+    })
+})
 
 //
 router.get('/seed', (req, res)=>{

@@ -14,7 +14,7 @@
     </nav>
     <div class="characterDiv">
         <%for (let i =0; i < characters.length; i++){ %> 
-            <h4><%= characters[i].name%></h4>
+            <h2><a href='/characters/<%=characters[i].id%>'><%= characters[i].name%></a></h2>
             <%for (let k = 0; k < characters[i].characterClass.length; k++){%>
                 <p><%=characters[i].characterClass[k].characterClass%>: <%=characters[i].characterClass[k].level%></p>
             <%}%>
