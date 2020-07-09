@@ -43,6 +43,17 @@ router.get('/new', (req, res)=>{
     res.render('new.ejs')
 })
 
+
+router.post('/', (req, res)=>{
+    if(req.body.isDead === 'on'){
+        req.body.idDead = true;
+    }else{
+        req.body.isDead = false;
+    }
+    Character.create(req.body);
+})
+
+
 router.put('/:id', (req, res)=>{
     if (req.body.isDead == 'on'){
         req.body.idDead = true;
