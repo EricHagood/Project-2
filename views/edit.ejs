@@ -8,9 +8,10 @@
 <body>
     <form action="/characters/<%=characters.id%>?_method=PUT" method="POST">
     Name: <input type="text" name="name" value="<%=characters.name%>"/><br/>
+    Race: <input type="text" name="race" value="<%=characters.race%>"/><br/>
     <%for (let i = 0; i < characters.characterClass.length; i++){%>
-        Class: <%=i + 1 %><input type="text" name="characterClass[<%=i%>].characterClass" value="<%=characters.characterClass[i].characterClass%>"/>
-        Level: <input type = "number" name = "characterClass[<%=i%>]level" value = "<%=characters.characterClass[i].level%>"/>
+        Class: <%=i + 1 %><input type="text" name="className" value="<%=characters.characterClass[i]%>"/>
+        Level: <input type = "number" name = "level" value = "<%=characters.level[i]%>"/>
     <%}%>
     Is Character Dead
     <input type="checkbox" name="isDead"

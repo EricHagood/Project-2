@@ -9,10 +9,13 @@
     <h1>New Character</h1>
     <form action='/characters' method='POST'>
         Name: <input type='text' name="name" id = "name"/>
-        Background <input type='text' name='background' id='background'/>
+        Race: <input type="text" name="race" id="race"/>
+        Class: <input type="text" name="characterClass" id="characterClass"/>
+        Level: <input type="numer" name="level" id="level"/>
+        Background: <input type='text' name='background' id='background'/>
         Is this charatcer dead? <input type='checkbox' name='isDead' id='isDead'/>
         <label for='backStory'>Charatcer's Backstory</label>
-        <textarea id='backStory'></textarea>
+        <textarea name="backStory" id='backStory'></textarea>
         <input type='submit' name='' value='Add Character to Database'/>
     </form>
 </body>

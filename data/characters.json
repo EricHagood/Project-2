@@ -1,11 +1,12 @@
 {
     "name": "Alexander",
+    "race": "Variant Human", 
     "background": "Outlander",
     "characterClass": [{
-        "characterClass": "Fighter", 
+        "className": "Fighter", 
         "level": 4
     },{
-        "characterClass": "Paladin", 
+        "className": "Paladin", 
         "level": 2
     }],
     "backStory": "He has one.",
