@@ -17,7 +17,7 @@ router.get('/', (req, res)=>{
 })
 
 //Test data
-router.get('/seed', (req, res)=>{
+router.get('/test', (req, res)=>{
     Character.create([{
         name: "Alexander",
         race: "Variant Human",
@@ -50,7 +50,7 @@ router.post('/', (req, res)=>{
     console.log(req.body);
     console.log(req.body.backStory);
     if(req.body.isDead === 'on'){
-        req.body.idDead = true;
+        req.body.isDead = true;
     }else{
         req.body.isDead = false;
     }

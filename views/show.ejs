@@ -6,14 +6,17 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <%- include('./partials/nav.ejs')%>
+    </nav>
     <h1> Character Name: <%=character.name%></h1>
     <div class='character-classes'>
-        <h2>Character Class(es)</h2>
+        <h2>Character Classes</h2>
     <%for (let i = 0; i < character.characterClass.length; i++){%>
         <p><%=character.characterClass[i] %>: <%=character.level[i]%></p>
     <% } %>
     </div>
-    <h2>Characters Backstory</h2>
+    <h2>Character Backstory</h2>
     <p><%= character.backStory%></p>
     <% if (character.isDead){%>
         <p>This character met with a terrible fate</p>
@@ -21,6 +24,8 @@
         <p>This character is still alive and kicking</p>
     <%}%>
     <h2><%=character.name%>'s Inventory</h2>
-        <p><%=character.items%></p>
+        <% for (let i = 0; i < character.items.length; i++){ %>
+            <p><%=character.items[i]%></p>
+        <%}%>
 </body>
 </html>

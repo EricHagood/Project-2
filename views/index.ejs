@@ -8,9 +8,7 @@
 <body>
     <nav>
         <h1>Character List</h1>
-        <form action="/characters/new" method="GET">
-            <input type="submit" value="Create New Character"/>
-        </form>
+        <%- include('./partials/nav.ejs')%>
     </nav>
     <div class="characterDiv">
         <%for (let i =0; i < characters.length; i++){ %> 
