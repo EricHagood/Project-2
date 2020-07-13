@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title><%=character.name%></title>
 </head>
 <body>
-    <nav>
+    <nav class="nav m-3">
         <%- include('./partials/nav.ejs')%>
     </nav>
-    <h1> Character Name: <%=character.name%></h1>
-    <div class='character-classes'>
+
+    <div class='mt-5 text-center'>
+        <h1> Character Name: <%=character.name%></h1>
         <h2>Character Classes</h2>
     <%for (let i = 0; i < character.characterClass.length; i++){%>
         <p><%=character.characterClass[i] %>: <%=character.level[i]%></p>
     <% } %>
-    </div>
     <h2>Character Backstory</h2>
     <p><%= character.backStory%></p>
     <% if (character.isDead){%>
@@ -27,5 +28,6 @@
         <% for (let i = 0; i < character.items.length; i++){ %>
             <p><%=character.items[i]%></p>
         <%}%>
+    </div>
 </body>
 </html>

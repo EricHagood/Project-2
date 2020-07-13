@@ -10,14 +10,14 @@
 <body>
     <div class="container">
     <h1>Characters</h1>
-    <nav class='nav'>
+    <nav class='nav m-3'>
         <%- include('./partials/nav.ejs')%>
     </nav>
     <h1>Your currently alive characters</h1>
     <div class="row">
         <%for (let i =0; i < characters.length; i++){ %>
             <%if (!characters[i].isDead){%>
-            <div class="characterDiv">
+            <div class="characterDiv ml-3 mr-3">
                 <h2><a href='/characters/<%=characters[i].id%>'><%= characters[i].name%></a></h2>
             <%for (let k = 0; k < characters[i].characterClass.length; k++){%>
                 <p><%=characters[i].characterClass[k]%>: <%=characters[i].level[k]%></p>
@@ -31,10 +31,10 @@
         <%}%>
         </div>
         <h1>These Characters' Adventures Ended Abruptly</h1>
-        
+        <div class="row">
         <%for (let i =0; i < characters.length; i++){ %>
             <%if (characters[i].isDead){%>
-                <div class="characterDiv"></div>
+                <div class="ml-3 mr-3">
                 <h2><a href='/characters/<%=characters[i].id%>'><%= characters[i].name%></a></h2>
             <%for (let k = 0; k < characters[i].characterClass.length; k++){%>
                 <p><%=characters[i].characterClass[k]%>: <%=characters[i].level[k]%></p>
@@ -46,6 +46,7 @@
             </div>
             <%}%>
         <%}%>
+    </div>
     </div>
 </body>
 </html>
