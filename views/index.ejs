@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <h1>Character List</h1>
+    <div class="container">
+    <h1>Characters</h1>
+    <nav class='nav'>
         <%- include('./partials/nav.ejs')%>
     </nav>
-    <div class="characterDiv">
-        <%for (let i =0; i < characters.length; i++){ %> 
-            <h2><a href='/characters/<%=characters[i].id%>'><%= characters[i].name%></a></h2>
+    <h1>Your currently alive characters</h1>
+    <div class="row">
+        <%for (let i =0; i < characters.length; i++){ %>
+            <%if (!characters[i].isDead){%>
+            <div class="characterDiv">
+                <h2><a href='/characters/<%=characters[i].id%>'><%= characters[i].name%></a></h2>
             <%for (let k = 0; k < characters[i].characterClass.length; k++){%>
                 <p><%=characters[i].characterClass[k]%>: <%=characters[i].level[k]%></p>
             <%}%>
-        <a href='/characters/<%=characters[i].id%>/edit'>Edit Character</a>
-        <form action="/characters/<%= characters[i].id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Character"/>
-        </form>
+            <a href='/characters/<%=characters[i].id%>/edit'>Edit Character</a>
+            <form action="/characters/<%= characters[i].id%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Character"/>
+            </form>
+            </div>
+            <%}%>
+        <%}%>
+        </div>
+        <h1>These Characters' Adventures Ended Abruptly</h1>
+        
+        <%for (let i =0; i < characters.length; i++){ %>
+            <%if (characters[i].isDead){%>
+                <div class="characterDiv"></div>
+                <h2><a href='/characters/<%=characters[i].id%>'><%= characters[i].name%></a></h2>
+            <%for (let k = 0; k < characters[i].characterClass.length; k++){%>
+                <p><%=characters[i].characterClass[k]%>: <%=characters[i].level[k]%></p>
+            <%}%>
+            <a href='/characters/<%=characters[i].id%>/edit'>Edit Character</a>
+            <form action="/characters/<%= characters[i].id%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Character"/>
+            </form>
+            </div>
+            <%}%>
         <%}%>
     </div>
 </body>
