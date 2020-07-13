@@ -72,6 +72,11 @@ router.put('/:id', (req, res)=>{
         res.redirect('/characters');
     })
 })
+//This post method was written following this documentation https://medium.com/stackfame/how-to-push-or-pop-items-into-mongodb-document-array-via-mongoose-in-node-js-express-js-91b7bbd0d218
+router.post('/:id/addItem', (req, res)=>{
+    Character.findByIdAndUpdate(req.params.id, {"$push": {items: req.body.item}}, {new: true}, (err, updatedCharacter)=>{
+})
+})
 
 //show route
 router.get('/:id', (req, res)=>{

@@ -24,5 +24,9 @@
     /><br/>
     <input type="submit" name="" value="Update Character"/>
     </form>
+    <form action='/characters/<%=characters.id%>/addItem?!method=PUT' method="POST">
+        Add new item: <input type="text" name="item" value=""/>
+        <input type="submit" name ="" value="Add Item"/>
+    </form>
 </body>
 </html>
