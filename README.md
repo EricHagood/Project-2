@@ -1,3 +1,6 @@
+#Link to Working Site
+    https://murmuring-sierra-56798.herokuapp.com/characters
+
 #Technologies used 
     This project was created using Mongoose, express, ejs, mongoDB, and Heroku.
 
@@ -6,4 +9,6 @@
 
 #Unsolved Problems
     Currently the unsolved problems on this project are adding a user login function so that multiple people can use this database. 
-    Adding in an option to add images to the characters. 
+    Adding in an option to add images to the characters.
+    the Ability to remove items from the inventory of the characters on the show page.
+    Sessions so that multiple people could use this database and log in to only view their specific list of characters.
