@@ -22,14 +22,19 @@
             <%for (let k = 0; k < characters[i].characterClass.length; k++){%>
                 <p><%=characters[i].characterClass[k]%>: <%=characters[i].level[k]%></p>
             <%}%>
-            <a href='/characters/<%=characters[i].id%>/edit'>Edit Character</a>
-            <form action="/characters/<%= characters[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Character"/>
-            </form>
+            <div class='d-inline'>
+                <form action="/characters/<%=characters[i].id%>/edit" method="GET">
+                    <input type="submit" value="Edit Charater"/>
+                </form>
+                <form action="/characters/<%= characters[i].id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Character"/>
+                </form>
+                </div>
             </div>
             <%}%>
         <%}%>
         </div>
+        <div class="m-5"></div>
         <h1>These Characters' Adventures Ended Abruptly</h1>
         <div class="row">
         <%for (let i =0; i < characters.length; i++){ %>
@@ -39,14 +44,19 @@
             <%for (let k = 0; k < characters[i].characterClass.length; k++){%>
                 <p><%=characters[i].characterClass[k]%>: <%=characters[i].level[k]%></p>
             <%}%>
-            <a href='/characters/<%=characters[i].id%>/edit'>Edit Character</a>
+            <div class='d-inline'>
+            <form action="/characters/<%=characters[i].id%>/edit" method="GET">
+                <input type="submit" value="Edit Charater"/>
+            </form>
             <form action="/characters/<%= characters[i].id%>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete Character"/>
             </form>
             </div>
+            </div>
             <%}%>
         <%}%>
-    </div>
-    </div>
+        
+        </div>
+        </div>
 </body>
 </html>

@@ -8,20 +8,24 @@
 </head>
 <body>
     <nav class="nav m-3">
-        <%- include('./partials/nav.ejs')%>
+        <form action="/characters/" method="GET" class="m-3">
+            <input type="submit" value="Home"/>
+        </form>
     </nav>
     <div class="m-5 text-center">
         <h1>New Character</h1>
     <form action='/characters' method='POST'>
-        Name: <input type='text' name="name" id = "name"/><br/>
-        Race: <input type="text" name="race" id="race"/><br/>
-        Class: <input type="text" name="characterClass" id="characterClass"/>
-        Level: <input type="numer" name="level" id="level"/><br/>
-        Background: <input type='text' name='background' id='background'/><br/>
-        Is this charatcer dead? <input type='checkbox' name='isDead' id='isDead'/><br/>
-        <label for='backStory'>Charatcer's Backstory</label>
+        Name: <input type='text' name="name" id = "name" class="m-2"/><br/>
+        Race: <input type="text" name="race" id="race" class="m-2"/><br/>
+        Class: <input type="text" name="characterClass" id="characterClass" class="m-2"/> <br/>
+        Level: <input type="numer" name="level" id="level" class="m-2"/><br/>
+        Background: <input type='text' name='background' id='background' class="m-2"/><br/>
+        Is this charatcer dead? <input type='checkbox' name='isDead' id='isDead' class="m-2"/><br/>
+        <div class="m-2">
+        <label for='backStory' class="align-top">Charatcer's Backstory</label>
         <textarea name="backStory" id='backStory'></textarea><br/>
         <input type='submit' name='' value='Add Character to Database'/>
+        </div>
     </form>
     </div>
 </body>

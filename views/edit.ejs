@@ -12,27 +12,28 @@
     </nav>
     <div class="text-center">
     <form action="/characters/<%=characters.id%>?_method=PUT" method="POST">
-    Name: <input type="text" name="name" value="<%=characters.name%>"/><br/>
-    Race: <input type="text" name="race" value="<%=characters.race%>"/><br/>
+    Name: <input type="text" name="name" value="<%=characters.name%>" class="m-2"/><br/>
+    Race: <input type="text" name="race" value="<%=characters.race%>" class="m-2"/><br/>
     <%for (let i = 0; i < characters.characterClass.length; i++){%>
-        Class: <%=i + 1 %><input type="text" name="characterClass" value="<%=characters.characterClass[i]%>"/>
-        Level: <input type = "number" name = "level" value = "<%=characters.level[i]%>"/><br/>
+        Class: <%=i + 1 %><input type="text" name="characterClass" value="<%=characters.characterClass[i]%>" class="m-2"/><br/>
+        Level: <input type = "number" name = "level" value = "<%=characters.level[i]%>" class="m-2"/><br/>
     <%}%>
     Is This Character Dead
-    <input type="checkbox" name="isDead"
+    <input type="checkbox" name="isDead" class="m-2"
         <% if (characters.isDead === true) { %>
             checked
         <% } %> 
     /><br/>
-    <input type="submit" name="" value="Update Character"/>
-    </form>
-    <form action='/characters/<%=characters.id%>/addItem?!method=PUT' method="POST">
+    <form action='/characters/<%=characters.id%>/addItem?!method=PUT' method="POST" class="m-2">
         Add new item: <input type="text" name="item" value=""/>
         <input type="submit" name ="" value="Add Item"/>
     </form>
-    <form action='/characters/<%=characters.id%>/addClass?!method=PUT' method="POST">
+    <form action='/characters/<%=characters.id%>/addClass?!method=PUT' method="POST" class="m-2">
         <input type="submit" name="" value="Add New Class"/>
     </form>
+    <input type="submit" name="" value="Update Character" class="m-2"/>
+    </form>
+    
     </div>
 </body>
 </html>
