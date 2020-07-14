@@ -24,16 +24,15 @@
             checked
         <% } %> 
     /><br/>
-    <form action='/characters/<%=characters.id%>/addItem?!method=PUT' method="POST" class="m-2">
-        Add new item: <input type="text" name="item" value=""/>
-        <input type="submit" name ="" value="Add Item"/>
+    <input type="submit" name="" value="Update Character" class="m-2"/>
     </form>
     <form action='/characters/<%=characters.id%>/addClass?!method=PUT' method="POST" class="m-2">
         <input type="submit" name="" value="Add New Class"/>
     </form>
-    <input type="submit" name="" value="Update Character" class="m-2"/>
+    <form action='/characters/<%=characters.id%>/addItem?_method=POST' method="POST" class="m-2">
+        Add new item: <input type="text" name="item" value=""/>
+        <input type="submit" name ="" value="Add Item"/>
     </form>
-    
     </div>
 </body>
 </html>
