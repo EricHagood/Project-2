@@ -76,7 +76,7 @@ router.put('/:id', (req, res)=>{
 router.post('/:id/addItem', (req, res)=>{
     Character.findByIdAndUpdate(req.params.id, {"$push": {items: req.body.item}}, {new: true}, (err, updatedCharacter)=>{
 })
-})
+})//These Two post methods update specific parts of the Character object while still remaining in the edit page
 router.post('/:id/addClass', (req, res)=>{
     Character.findByIdAndUpdate(req.params.id, {"$push": {characterClass: "", level: ""} }, {new: true}, (err, updatedCharacter)=>{
         res.redirect('/characters/'+ req.params.id + '/edit');
