@@ -77,6 +77,11 @@ router.post('/:id/addItem', (req, res)=>{
     Character.findByIdAndUpdate(req.params.id, {"$push": {items: req.body.item}}, {new: true}, (err, updatedCharacter)=>{
 })
 })
+router.post('/:id/addClass', (req, res)=>{
+    Character.findByIdAndUpdate(req.params.id, {"$push": {characterClass: "", level: ""} }, {new: true}, (err, updatedCharacter)=>{
+        res.redirect('/characters/'+ req.params.id + '/edit');
+})
+})
 
 //show route
 router.get('/:id', (req, res)=>{

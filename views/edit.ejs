@@ -15,7 +15,7 @@
     Name: <input type="text" name="name" value="<%=characters.name%>"/><br/>
     Race: <input type="text" name="race" value="<%=characters.race%>"/><br/>
     <%for (let i = 0; i < characters.characterClass.length; i++){%>
-        Class: <%=i + 1 %><input type="text" name="className" value="<%=characters.characterClass[i]%>"/>
+        Class: <%=i + 1 %><input type="text" name="characterClass" value="<%=characters.characterClass[i]%>"/>
         Level: <input type = "number" name = "level" value = "<%=characters.level[i]%>"/><br/>
     <%}%>
     Is This Character Dead
@@ -29,6 +29,9 @@
     <form action='/characters/<%=characters.id%>/addItem?!method=PUT' method="POST">
         Add new item: <input type="text" name="item" value=""/>
         <input type="submit" name ="" value="Add Item"/>
+    </form>
+    <form action='/characters/<%=characters.id%>/addClass?!method=PUT' method="POST">
+        <input type="submit" name="" value="Add New Class"/>
     </form>
     </div>
 </body>
